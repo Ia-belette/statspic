@@ -6,7 +6,6 @@ import {
   TOP_SONGS,
   TOP_TRACK_POSTER,
 } from '@/fake-data';
-import {} from '@/components/templates/harmony/styles';
 
 const meta = {
   title: 'Templates/Harmony',
