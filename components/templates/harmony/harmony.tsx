@@ -1,16 +1,15 @@
 import { CURRENT_MONTH } from '@/lib/current-month';
+import { APP_NAME } from '@/lib/app';
 import {
   harmony,
-  img,
-  imgContainer,
-  topWrapper,
-  listWrapper,
-  list,
-  credit,
+  posterImage,
+  posterContainer,
+  topSection,
+  listSection,
+  listItem,
+  footer,
   Harmony as HarmonyType,
 } from './styles';
-
-import { APP_NAME } from '@/lib/app';
 
 type ItemProps = {
   id: number;
@@ -27,21 +26,21 @@ export const Harmony = ({
   topArtists,
   topSongs,
   posterUrl,
-  visual = 'midgnights',
+  visual = 'midgnight',
 }: HarmonyProps) => {
   const classes = harmony({ visual });
 
   return (
     <div className={classes.root}>
-      <div className={imgContainer}>
-        <img src={posterUrl} alt='poster' className={img} />
+      <div className={posterContainer}>
+        <img src={posterUrl} alt='poster' className={posterImage} />
       </div>
-      <div className={topWrapper}>
-        <div className={listWrapper}>
+      <div className={topSection}>
+        <div className={listSection}>
           <h2 className={classes.title}>Top Artists</h2>
           <ul>
             {topArtists.map((artist, i) => (
-              <li key={artist.id} className={list}>
+              <li key={artist.id} className={listItem}>
                 <p className={classes.text}>
                   #{i + 1} {artist.name}
                 </p>
@@ -49,20 +48,20 @@ export const Harmony = ({
             ))}
           </ul>
         </div>
-        <div className={listWrapper}>
+        <div className={listSection}>
           <h2 className={classes.title}>Top Songs</h2>
           <ul>
-            {topSongs.map((artist, i) => (
-              <li key={artist.id} className={list}>
+            {topSongs.map((song, i) => (
+              <li key={song.id} className={listItem}>
                 <p className={classes.text}>
-                  #{i + 1} {artist.name}
+                  #{i + 1} {song.name}
                 </p>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className={credit}>
+      <div className={footer}>
         <p className={classes.credit}>{CURRENT_MONTH}</p>
         <p className={classes.credit}>{APP_NAME}</p>
       </div>
