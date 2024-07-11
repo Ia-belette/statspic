@@ -7,8 +7,25 @@ const textStyle = {
   width: '100%',
 };
 
+const backgroundMonth = {
+  position: 'absolute',
+  top: 100,
+  zIndex: '0',
+  left: -10,
+  width: '200%',
+  height: '50px',
+
+  fontSize: '23px',
+  textTransform: 'uppercase',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '8px',
+  transform: 'rotate(-14deg)',
+};
+
 export const harmony = sva({
-  slots: ['root', 'title', 'text', 'credit'],
+  slots: ['root', 'title', 'text', 'credit', 'backgroundMonth'],
   base: {
     root: {
       width: 360,
@@ -32,6 +49,11 @@ export const harmony = sva({
           color: 'midnightText',
           ...textStyle,
         },
+        backgroundMonth: {
+          backgroundColor: 'midnightTitle',
+          color: 'midnightText',
+          ...backgroundMonth,
+        },
         credit: {
           color: 'midnightTitle',
           textTransform: 'uppercase',
@@ -47,6 +69,11 @@ export const harmony = sva({
         text: {
           color: 'blackText',
           ...textStyle,
+        },
+        backgroundMonth: {
+          backgroundColor: 'blackText',
+          color: 'blackTitle',
+          ...backgroundMonth,
         },
         credit: {
           color: 'blackTitle',
@@ -64,6 +91,11 @@ export const harmony = sva({
           color: 'cobaltText',
           ...textStyle,
         },
+        backgroundMonth: {
+          backgroundColor: 'cobaltTitle',
+          color: 'cobaltText',
+          ...backgroundMonth,
+        },
         credit: {
           color: 'cobaltTitle',
           textTransform: 'uppercase',
@@ -80,6 +112,11 @@ export const harmony = sva({
           color: 'mintText',
           ...textStyle,
         },
+        backgroundMonth: {
+          backgroundColor: 'mintTitle',
+          color: '#F36EBD',
+          ...backgroundMonth,
+        },
         credit: {
           color: 'mintTitle',
           textTransform: 'uppercase',
@@ -95,6 +132,7 @@ export const harmony = sva({
 export type Harmony = RecipeVariantProps<typeof harmony>;
 
 export const posterContainer = css({
+  overflow: 'hidden',
   position: 'relative',
   display: 'flex',
   justifyContent: 'center',
@@ -105,8 +143,9 @@ export const posterContainer = css({
 
 export const posterImage = css({
   width: 'auto',
-  height: 165,
+  height: 185,
   objectFit: 'cover',
+  zIndex: 1,
 });
 
 export const topSection = css({
