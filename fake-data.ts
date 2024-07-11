@@ -8,44 +8,59 @@ export const TOP_ARTISTS = [
   {
     id: 1,
     name: 'Taylor Swift',
+    poster: 'https://i.scdn.co/image/ab67616100005174e672b5f553298dcdccb0e676',
   },
   {
     id: 2,
-    name: 'Myd',
+    name: 'Metro Boomin',
+    poster: 'https://i.scdn.co/image/ab67616100005174df9a1555f53a20087b8c5a5c',
   },
   {
     id: 3,
-    name: 'Weval',
+    name: 'aespa',
+    poster: 'https://i.scdn.co/image/ab67616100005174573935eb61a1897aeb43c531',
   },
   {
     id: 4,
-    name: 'Le Wanski',
+    name: 'La Fève',
+    poster: 'https://i.scdn.co/image/ab676161000051743c8807f02ec118f2dbc7ccee',
   },
   {
     id: 5,
-    name: 'LCD Soundsystem',
+    name: 'Kodak Black',
+    poster: 'https://i.scdn.co/image/ab6761610000517470c05cf4dc9a7d3ffd02ba19',
   },
 ];
 
 export const TOP_SONGS = [
   {
     id: 1,
-    name: 'Runaway',
+    name: 'Like That',
+    poster: 'https://i.scdn.co/image/ab67616d00001e02a46b07c291e6dfdee13b3ee8',
+    artists: ['Future', 'Metro Boomin', 'Kendrick Lamar'],
   },
   {
     id: 2,
-    name: 'Into the Light',
+    name: 'Cruel Summer',
+    poster: 'https://i.scdn.co/image/ab67616d00001e02e787cffec20aa2a396a61647',
+    artists: ['Taylor Swift'],
   },
   {
     id: 3,
-    name: 'Snow',
+    name: 'Supernova',
+    poster: 'https://i.scdn.co/image/ab67616d00001e02090cfa22962b115ac530674c',
+    artists: ['aespa'],
   },
   {
     id: 4,
-    name: 'Hello',
+    name: 'Anti-Hero',
+    poster: 'https://i.scdn.co/image/ab67616d00001e02bb54dde68cd23e2a268ae0f5',
+    artists: ['Taylor Swift'],
   },
   {
     id: 5,
-    name: 'Hey Brother',
+    name: 'SAMESHIT - BONUS',
+    poster: 'https://i.scdn.co/image/ab67616d00001e02a281c8c6cb1b0630d3a24bd7',
+    artists: ['La Fève'],
   },
 ];
