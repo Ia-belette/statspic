@@ -21,13 +21,13 @@ const meta = {
       control: {
         type: 'select',
         labels: {
-          midgnights: 'Midgnights',
-          'like-that': 'Like That',
+          midgnight: 'Midgnight',
+          black: 'Black',
           gobalt: 'Gobalt',
           minty: 'Minty',
         },
       },
-      options: ['midgnights', 'like-that', 'gobalt', 'minty'],
+      options: ['midgnight', 'black', 'gobalt', 'minty'],
     },
     posterUrl: {
       control: {
@@ -59,7 +59,7 @@ type Story = StoryObj<typeof meta>;
 
 export const WithTopArtistPoster: Story = {
   args: {
-    visual: 'midgnights',
+    visual: 'midgnight',
     topArtists: TOP_ARTISTS,
     topSongs: TOP_SONGS,
     posterUrl: TOP_ARTIST_POSTER,
@@ -68,7 +68,7 @@ export const WithTopArtistPoster: Story = {
 
 export const WithTopTrackPoster: Story = {
   args: {
-    visual: 'midgnights',
+    visual: 'midgnight',
     topArtists: TOP_ARTISTS,
     topSongs: TOP_SONGS,
     posterUrl: TOP_TRACK_POSTER,
