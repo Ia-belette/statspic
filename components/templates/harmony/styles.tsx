@@ -1,142 +1,136 @@
 import { RecipeVariantProps, css, sva } from '../../../styled-system/css';
 
+const textStyle = {
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
+  width: '100%',
+};
+
 export const harmony = sva({
   slots: ['root', 'title', 'text', 'credit'],
   base: {
     root: {
       width: 360,
       height: 600,
-      fontWeight: '570',
+      fontWeight: 600,
       display: 'flex',
       flexDirection: 'column',
-      fontSize: '18',
+      fontSize: 18,
     },
   },
   variants: {
     visual: {
-      midgnights: {
+      midgnight: {
         root: {
-          backgroundColor: 'midnights',
+          backgroundColor: 'midnightBackground',
         },
         title: {
-          color: 'midnights-title',
+          color: 'midnightTitle',
         },
         text: {
-          color: 'midnights-text',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-          width: '100%',
+          color: 'midnightText',
+          ...textStyle,
         },
         credit: {
-          color: 'midnights-title',
+          color: 'midnightTitle',
           textTransform: 'uppercase',
         },
       },
-      'like-that': {
+      black: {
         root: {
-          backgroundColor: 'like-that',
+          backgroundColor: 'blackBackground',
         },
         title: {
-          color: 'like-that-title',
+          color: 'blackTitle',
         },
         text: {
-          color: 'like-that-text',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-          width: '100%',
+          color: 'blackText',
+          ...textStyle,
         },
         credit: {
-          color: 'like-that-title',
+          color: 'blackTitle',
           textTransform: 'uppercase',
         },
       },
       gobalt: {
         root: {
-          backgroundColor: 'gobalt',
+          backgroundColor: 'cobaltBackground',
         },
         title: {
-          color: 'gobalt-title',
+          color: 'cobaltTitle',
         },
         text: {
-          color: 'gobalt-text',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-          width: '100%',
+          color: 'cobaltText',
+          ...textStyle,
         },
         credit: {
-          color: 'gobalt-title',
+          color: 'cobaltTitle',
           textTransform: 'uppercase',
         },
       },
       minty: {
         root: {
-          backgroundColor: 'minty',
+          backgroundColor: 'mintBackground',
         },
         title: {
-          color: 'minty-title',
+          color: 'mintTitle',
         },
         text: {
-          color: 'minty-text',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-          width: '100%',
+          color: 'mintText',
+          ...textStyle,
         },
         credit: {
-          color: 'minty-title',
+          color: 'mintTitle',
           textTransform: 'uppercase',
         },
       },
     },
   },
   defaultVariants: {
-    visual: 'midgnights',
+    visual: 'midgnight',
   },
 });
 
 export type Harmony = RecipeVariantProps<typeof harmony>;
 
-export const imgContainer = css({
+export const posterContainer = css({
   position: 'relative',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  pt: '16',
-  pb: '14',
+  paddingTop: 16,
+  paddingBottom: 14,
 });
 
-export const img = css({
+export const posterImage = css({
   width: 'auto',
-  height: '165px',
+  height: 165,
   objectFit: 'cover',
 });
 
-export const topWrapper = css({
+export const topSection = css({
   display: 'grid',
-  gridColumnStart: '2',
   gridTemplateColumns: '1fr 1fr',
-  gap: '4',
-  px: '4',
+  gap: 4,
+  paddingInline: 4,
 });
 
-export const listWrapper = css({
+export const listSection = css({
   display: 'flex',
   flexDirection: 'column',
-  gap: '1',
+  gap: 1,
   overflow: 'hidden',
 });
 
-export const list = css({
-  mt: '1',
+export const listItem = css({
+  marginTop: 1,
 });
 
-export const credit = css({
-  p: '4',
+export const footer = css({
+  padding: 4,
   display: 'flex',
   justifyContent: 'space-between',
-  mt: 'auto',
+  marginTop: 'auto',
   color: 'midnights-text',
 });
