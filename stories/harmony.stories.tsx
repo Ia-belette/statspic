@@ -68,7 +68,7 @@ export const WithTopArtistPoster: Story = {
 
 export const WithTopTrackPoster: Story = {
   args: {
-    visual: 'midgnight',
+    visual: 'black',
     topArtists: TOP_ARTISTS,
     topSongs: TOP_SONGS,
     posterUrl: TOP_TRACK_POSTER,
