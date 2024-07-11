@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Harmony } from '@/components/templates/harmony/harmony';
+import { Harmony } from '@/components/templates/harmony';
 import {
   TOP_ARTISTS,
   TOP_ARTIST_POSTER,
