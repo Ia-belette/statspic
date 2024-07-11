@@ -4,7 +4,7 @@ import Spotify from 'next-auth/providers/spotify';
 
 import prisma from '@/prisma/client';
 
-import { refreshAccessToken } from '@/lib/refresh-token';
+import { refreshAccessToken } from '@/lib/auth/refresh-token';
 
 const scopes = [
   'user-read-email,user-top-read,user-read-recently-played,user-read-currently-playing',
