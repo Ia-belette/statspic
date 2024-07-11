@@ -1,5 +1,3 @@
-import { CURRENT_MONTH } from '@/lib/current-month';
-import { APP_NAME } from '@/lib/app';
 import {
   harmony,
   posterImage,
@@ -9,7 +7,10 @@ import {
   listItem,
   footer,
   Harmony as HarmonyType,
-} from './styles';
+} from '@/components/templates/harmony/styles';
+
+import { CURRENT_MONTH } from '@/lib/current-month';
+import { APP_NAME } from '@/lib/app';
 
 type ItemProps = {
   id: number;
@@ -33,7 +34,12 @@ export const Harmony = ({
   return (
     <div className={classes.root}>
       <div className={posterContainer}>
-        <img src={posterUrl} alt='poster' className={posterImage} />
+        <div className={classes.backgroundMonth}>
+          {Array.from({ length: 10 }).map((_, i) => (
+            <span key={i}>{CURRENT_MONTH}</span>
+          ))}
+        </div>
+        <img src={posterUrl} alt='Top items poster' className={posterImage} />
       </div>
       <div className={topSection}>
         <div className={listSection}>
