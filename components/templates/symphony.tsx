@@ -10,13 +10,13 @@ type Item = {
 type Symphony = {
   visual: 'lime' | 'tomato';
   type: 'Songs' | 'Artists';
-  items: Item[];
+  topSongs: Item[];
   moment: string;
 };
 
 export const Symphony = ({
-  visual,
-  items,
+  visual = 'lime',
+  topSongs,
   type = 'Songs',
   moment,
 }: Symphony) => {
@@ -38,7 +38,7 @@ export const Symphony = ({
         Your Top {type}
       </h1>
       <ul>
-        {items.map((item, i) => (
+        {topSongs.map((item, i) => (
           <li key={item.name} className={'flex items-center gap-[10px] mt-4'}>
             <div className={'flex items-center min-w-[100px] gap-4'}>
               <span
@@ -94,3 +94,5 @@ export const Symphony = ({
     </div>
   );
 };
+
+export default Symphony;

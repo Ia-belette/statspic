@@ -139,3 +139,5 @@ export const Harmony = ({
     </div>
   );
 };
+
+export default Harmony;

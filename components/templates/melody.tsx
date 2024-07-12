@@ -9,7 +9,7 @@ type MelodyProps = {
 };
 
 export const Melody = ({
-  visual,
+  visual = 'crimson',
   type,
   name,
   posterUrl,
@@ -66,3 +66,5 @@ export const Melody = ({
     </div>
   );
 };
+
+export default Melody;
