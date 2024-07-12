@@ -14,7 +14,7 @@ const Page = async () => {
       <div className='relative row-span-6 md:row-span-12 md:col-span-8 flex justify-center items-center text-xl bg-[--gray-2]'>
         <div className='dot'></div>
         <Zoom>
-          <div className='!w-[360px] !h-[600px] bg-red-500'></div>
+          <div className='!w-[360px] !h-[300px] bg-red-500'></div>
         </Zoom>
       </div>
       <div className='row-span-4 md:row-span-12 md:col-span-4 flex justify-center items-center text-2xl bg-[--gray-1]'>
