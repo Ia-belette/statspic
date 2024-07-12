@@ -17,7 +17,7 @@ const Page = async () => {
         <WhatIsThis />
         <DotGrid />
         <Zoom>
-          <div className='!w-[360px] !h-[300px] bg-red-500'></div>
+          <div></div>
         </Zoom>
       </div>
       <div className='row-span-4 md:row-span-12 md:col-span-4 flex justify-center items-center text-2xl bg-[--gray-1]'>
