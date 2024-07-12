@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter_Tight } from 'next/font/google';
+import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import './globals.css';
 
 const inter = Inter_Tight({ subsets: ['latin'], variable: '--inter-tight' });
@@ -16,7 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} ${inter.variable}`}>{children}</body>
+      <body className={`${inter.className} ${inter.variable}`}>
+        <Theme
+          accentColor='grass'
+          grayColor='sand'
+          radius='large'
+          scaling='95%'
+          appearance='dark'
+        >
+          {children}
+        </Theme>
+      </body>
     </html>
   );
 }
