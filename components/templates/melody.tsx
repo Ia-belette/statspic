@@ -1,5 +1,4 @@
 import { cn } from '@/lib/cn';
-import clsx from 'clsx';
 
 type MelodyProps = {
   visual: 'crimson' | 'sky' | 'yellow';
