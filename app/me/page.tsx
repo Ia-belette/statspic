@@ -3,6 +3,8 @@ import { Zoom } from '@/components/zoom';
 import { redirect } from 'next/navigation';
 import { WhatIsThis } from '@/components/what-is-this';
 import { DotGrid } from '@/components/dot-grid';
+import { RenderSelectedTheme, ThemeSelector } from '@/components/theme-filter';
+import { TOP_ARTISTS, TOP_SONGS } from '@/fake-data';
 
 const Page = async () => {
   const user = await auth();
@@ -17,11 +19,16 @@ const Page = async () => {
         <WhatIsThis />
         <DotGrid />
         <Zoom>
-          <div></div>
+          <RenderSelectedTheme
+            topArtists={TOP_ARTISTS}
+            topSongs={TOP_SONGS}
+            moment='JUNE'
+            posterUrl={TOP_ARTISTS[0].poster}
+          />
         </Zoom>
       </div>
       <div className='row-span-4 md:row-span-12 md:col-span-4 flex justify-center items-center text-2xl bg-[--gray-1]'>
-        Controls
+        <ThemeSelector />
       </div>
     </main>
   );
