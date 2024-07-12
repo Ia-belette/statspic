@@ -1,6 +1,5 @@
 import { APP_NAME } from '@/lib/app';
 import { cn } from '@/lib/cn';
-import { CURRENT_MONTH } from '@/lib/current-month';
 
 type Item = {
   poster: string;
@@ -89,7 +88,7 @@ export const Symphony = ({
           visual === 'tomato' && 'text-tomatoTitle'
         )}
       >
-        <p>{CURRENT_MONTH}</p>
+        <p>{moment}</p>
         <p>{APP_NAME}</p>
       </div>
     </div>
