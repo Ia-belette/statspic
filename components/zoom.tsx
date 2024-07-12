@@ -16,20 +16,21 @@ export const Zoom = ({ children }: { children: React.ReactNode }) => {
   console.log('wraaaaaper 😤', wrapperSize);
 
   return (
-    <div ref={wrapperRef} className='relative w-full h-full'>
+    <div ref={wrapperRef} className='w-full h-full'>
       <TransformWrapper
         ref={transformWrapperRef}
         initialScale={0.8}
         initialPositionX={initialPosition.x}
         initialPositionY={initialPosition.y}
         minScale={0.5}
+        doubleClick={{
+          mode: 'reset',
+        }}
       >
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
           <React.Fragment>
             <TransformComponent wrapperClass='!w-full !h-full'>
-              <div ref={contentRef} className='relative'>
-                {children}
-              </div>
+              <div ref={contentRef}>{children}</div>
             </TransformComponent>
           </React.Fragment>
         )}
