@@ -15,7 +15,7 @@ type HarmonyProps = {
   moment: string;
 };
 
-export const HarmonyComponent = ({
+export const Harmony = ({
   visual = 'midgnight',
   moment,
   posterUrl,
