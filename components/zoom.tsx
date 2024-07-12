@@ -1,25 +1,47 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { useInitialPosition } from '@/hooks/use-position';
+import { Spinner } from '@radix-ui/themes';
 
 export const Zoom = ({ children }: { children: React.ReactNode }) => {
   const wrapperRef = useRef(null);
   const transformWrapperRef = useRef(null);
   const contentRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   const { initialPosition, wrapperSize } = useInitialPosition(
     wrapperRef,
     transformWrapperRef,
     contentRef
   );
 
-  console.log('wraaaaaper 😤', wrapperSize);
+  useEffect(() => {
+    if (wrapperSize.width > 0 && wrapperSize.height > 0) {
+      setIsLoading(false);
+    }
+  }, [wrapperSize]);
+
+  useEffect(() => {
+    if (transformWrapperRef.current && !isLoading) {
+      transformWrapperRef.current.setTransform(
+        initialPosition.x,
+        initialPosition.y,
+        0.9
+      );
+    }
+  }, [initialPosition, isLoading]);
 
   return (
     <div ref={wrapperRef} className='w-full h-full'>
+      {isLoading && (
+        <div className='absolute inset-0 flex items-center justify-center  z-50'>
+          <Spinner className='!size-4' style={{}} />
+        </div>
+      )}
       <TransformWrapper
         ref={transformWrapperRef}
-        initialScale={0.8}
+        initialScale={0.9}
         initialPositionX={initialPosition.x}
         initialPositionY={initialPosition.y}
         minScale={0.5}
@@ -30,7 +52,12 @@ export const Zoom = ({ children }: { children: React.ReactNode }) => {
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
           <React.Fragment>
             <TransformComponent wrapperClass='!w-full !h-full'>
-              <div ref={contentRef}>{children}</div>
+              <div
+                ref={contentRef}
+                className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+              >
+                {children}
+              </div>
             </TransformComponent>
           </React.Fragment>
         )}
