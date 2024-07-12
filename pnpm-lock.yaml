@@ -14,6 +14,9 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   next:
     specifier: 14.2.4
     version: 14.2.4(@babel/core@7.24.7)(react-dom@18.3.1)(react@18.3.1)
@@ -26,6 +29,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.3.1(react@18.3.1)
+  react-zoom-pan-pinch:
+    specifier: ^3.6.1
+    version: 3.6.1(react-dom@18.3.1)(react@18.3.1)
   tailwind-merge:
     specifier: ^2.4.0
     version: 2.4.0
@@ -61,6 +67,9 @@ devDependencies:
   '@storybook/test':
     specifier: ^8.2.1
     version: 8.2.1(storybook@8.2.1)
+  '@types/lodash':
+    specifier: ^4.17.6
+    version: 4.17.6
   '@types/node':
     specifier: ^20
     version: 20.14.10
@@ -8357,7 +8366,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -9803,6 +9811,17 @@ packages:
       invariant: 2.2.4
       react: 18.3.1
       tslib: 2.6.3
+    dev: false
+
+  /react-zoom-pan-pinch@3.6.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-SdPqdk7QDSV7u/WulkFOi+cnza8rEZ0XX4ZpeH7vx3UZEg7DoyuAy3MCmm+BWv/idPQL2Oe73VoC0EhfCN+sZQ==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /react@18.3.1:
