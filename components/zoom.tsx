@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { useInitialPosition } from '@/hooks/use-position';
 import { Spinner } from '@radix-ui/themes';
+import { cn } from '@/lib/cn';
 
 export const Zoom = ({ children }: { children: React.ReactNode }) => {
   const wrapperRef = useRef(null);
@@ -54,7 +55,10 @@ export const Zoom = ({ children }: { children: React.ReactNode }) => {
             <TransformComponent wrapperClass='!w-full !h-full'>
               <div
                 ref={contentRef}
-                className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+                className={cn(
+                  `transition-opacity duration-300`,
+                  isLoading ? 'opacity-0' : 'opacity-100'
+                )}
               >
                 {children}
               </div>
